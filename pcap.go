@@ -259,3 +259,8 @@ func (p *Pcap) Inject(data []byte) (err error) {
 	return
 }
 
+func (p *Pcap) Close() (err error) {
+  C.pcap_close(p.cptr)
+  return
+}
+
